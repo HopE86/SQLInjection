@@ -1,5 +1,4 @@
 <?php
-include_once('code/ProductListItem.php');
 include_once('code/util.php');
 if (!isset($entries)) die('error: no entries defined');
 /*foreach($entries as $entry) {
