@@ -2,16 +2,16 @@
 class Validate {
 	private static function isValidName($name) {
 		$length = strlen($name);
-		$name = escape($name);
+		//$name = escape($name);
 		return ((strlen($name) > 0) && strlen($name) == $length && strlen($name) < 21);
 	} //isValidName
 	private static function isValidPassword($pw) {
 		$length = strlen($pw);
-		$pw = escape($pw);
+		//$pw = escape($pw);
 		return ((strlen($pw) > 3) && strlen($pw) == $length && strlen($pw) < 21);
 	} //isValidPassword
 	private static function isValidText($text) {
-		$text = escape($text);
+		//$text = escape($text);
 		return strlen($text) > 0;
 	} //isValidText
 	public static function getAddEntryFormErrors() {

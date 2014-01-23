@@ -25,24 +25,24 @@ class DataManager {
 		$con->close();
 		return $user;
 	} //getUser
-	public static function getUserForName($userName) {
+	/*public static function getUserForName($userName) {
 		$user = null;
 		$con = self::getConnection();
-		$userName = $con -> escape_string($userName);
+		//$userName = $con -> escape_string($userName);
 		$res = self::query($con,
 				 "SELECT id, login, password FROM user WHERE login = '$userName';");
 		if($u = $res->fetch_object())
 			$user =new User($u -> id, $u -> login, $u -> password);
 		$res->close();
         if (!is_null($user)) {
-            $id = escape($user -> getId());
+            //$id = escape($user -> getId());
             self::query($con,
                 "INSERT INTO loginLog(date, user_id) VALUES (Sysdate() , $id);");
         } //if
 		$con->close();
 		return $user;
-	} //getUserForName
-    /*public static function getUserForName($userName) { //unsafe
+	} //getUserForName*/
+    public static function getUserForName($userName) { //unsafe
         $user = null;
         $con = self::getConnection();
         $query  = "SELECT id, login, password FROM user WHERE login = '$userName';";
@@ -58,12 +58,12 @@ class DataManager {
         } //if
         $con->close();
         return $user;
-    } //getUserForName*/
+    } //getUserForName
 	public static function insertUser($userName, $password) {
 		$userId = -1;
 		$con = self::getConnection();
-		$userName = $con -> escape_string($userName);
-		$password = $con -> escape_string($password);
+		//$userName = $con -> escape_string($userName);
+		//$password = $con -> escape_string($password);
 		$password = hash('sha1', "$userName|$password");
 		self::query($con, "BEGIN;");
 		if (self::query($con, "INSERT INTO user(login, password) VALUES('$userName', '$password');"))
@@ -76,7 +76,7 @@ class DataManager {
 	public static function getEntriesFor($userId) {
 		$entries = array();
 		$con = self::getConnection();
-		$userId = $con -> escape_string($userId);
+		//$userId = $con -> escape_string($userId);
 		$res = self::query($con, "SELECT id, text, user_id, date
 				 FROM entry WHERE user_id = '$userId' ORDER BY date DESC");
 		while ($e = $res -> fetch_object())
@@ -88,8 +88,8 @@ class DataManager {
 	public static function getEntriesForSearchCriteria($id, $term){
 		$entries = array();
 		$con = self::getConnection();
-		$term = $con -> escape_string($term);
-        $id = $con -> escape_string($id);
+		//$term = $con -> escape_string($term);
+        //$id = $con -> escape_string($id);
 		$res = self::query($con, "SELECT id, text, user_id, date
 				FROM entry WHERE user_id = $id  AND
 				 (text LIKE '%$term%' OR date LIKE '%$term%') ORDER BY date DESC;");
@@ -102,7 +102,7 @@ class DataManager {
 	public static function getEntryCount($userId) {
 		$count = null;
 		$con = self::getConnection();
-		$userId = $con -> escape_string($userId);
+		//$userId = $con -> escape_string($userId);
 		$res = self::query($con, "SELECT count(id) c FROM entry WHERE user_id = '$userId';");
 		if ($result = $res -> fetch_object())
 			$count = $result -> c;
@@ -113,8 +113,8 @@ class DataManager {
 	public static function insertEntry($userId, $text) {
 		$entryId = -1;
 		$con = self::getConnection();
-		$userId = $con -> escape_string($userId);
-		$text = htmlentities($text);
+		//$userId = $con -> escape_string($userId);
+		//$text = htmlentities($text);
 		self::query($con, "BEGIN;");
 		if (self::query($con, "INSERT INTO entry(text, user_id, date)
 				VALUES('$text', $userId, Sysdate());"))

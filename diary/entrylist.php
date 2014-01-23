@@ -10,9 +10,9 @@ if (!isset($entries)) die('error: no entries defined');
 	</tr>
 	<?php foreach($entries as $entry) {?>
 	<tr>
-		<td><?php echo date_format(new DateTime(escape($entry -> getDate())), 'd.m.Y H:i'); ?>
+		<td><?php echo date_format(new DateTime($entry -> getDate()), 'd.m.Y H:i'); ?>
 		</td>
-		<td><?php echo escape($entry -> getText()); ?>
+		<td><?php echo $entry -> getText(); ?>
 		</td>
 	</tr>
 	<?php }?>

@@ -39,7 +39,7 @@ if (isset($_REQUEST['logout']))
 					<form name="test" method="post" action="">
 						
 							Welcome,
-							<?php echo escape($user->getLogin());?>.
+							<?php echo $user->getLogin();?>.
 						
 						<input type="hidden" name="logout" value="">
 						<input type="submit" value="Logout">

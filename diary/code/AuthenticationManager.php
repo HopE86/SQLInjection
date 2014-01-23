@@ -3,10 +3,10 @@ require_once('db/DataManager.php');
 SessionContext::create();
 class AuthenticationManager {
 	public static function authenticate($userName, $password){
-        $password=escape($password);
-		$user=DataManager::getUserForName(escape($userName));
-		if ($user != null && $user->getPassword() == hash('sha1', "$userName|$password")) {
-		//if ($user != null && $user->getPassword() == escape($password)) {
+        //$password=escape($password);
+		$user=DataManager::getUserForName($userName);
+		//if ($user != null && $user->getPassword() == hash('sha1', "$userName|$password")) {
+		if ($user != null && $user->getPassword() == $password) {
 			$_SESSION['user'] = $user->getId();
 			return true;
 		} //if

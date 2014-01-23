@@ -21,11 +21,11 @@ else
 	<table>
 		<tr>
 			<th>User name:</th>
-			<td><input name="userName" value="<?php echo escape($userName); ?>" class="textfield"/>
+			<td><input name="userName" value="<?php echo $userName; ?>" class="textfield"/>
 			</td>
 			<?php
 			if (isset($registerErrors['userName']))
-			 	echo "<td class='errorTable'>".escape($registerErrors['userName'])."</td>";
+			 	echo "<td class='errorTable'>".$registerErrors['userName']."</td>";
 			 ?>
 		</tr>
 		<tr>
@@ -33,7 +33,7 @@ else
 			<td><input type="password" name="password1" class="textfield" /></td>
 			<?php
 			if (isset($registerErrors['userPassword']))
-				 echo "<td class='errorTable'>".escape($registerErrors['userPassword'])."</td>";
+				 echo "<td class='errorTable'>".$registerErrors['userPassword']."</td>";
 			 ?>
 		</tr>
 		<tr>

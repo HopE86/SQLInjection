@@ -23,7 +23,7 @@ $count = count($entries);
 	<table>
 	<tr>
 		<th>Term or date: </th>
-		<td> <input name="term" value="<?php echo escape($term); ?>" class="textfield" /> </td>
+		<td> <input name="term" value="<?php echo $term; ?>" class="textfield" /> </td>
 	</tr>
 	</table>
 	<input type="submit" value="Search" class="button-small" />

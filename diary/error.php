@@ -2,7 +2,7 @@
 <div class="errors">
 <ul>
 <?php foreach($errors as $errMsg) :?>
-<li> <?php echo escape($errMsg); ?> </li>
+<li> <?php echo $errMsg; ?> </li>
 <?php endforeach; ?>
 </ul>
 </div>

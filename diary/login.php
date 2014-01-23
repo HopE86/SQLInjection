@@ -15,7 +15,7 @@ if (isset($_REQUEST['userName']) && isset($_REQUEST['password']))
 	<table>
 		<tr>
 			<th>User name:</th>
-			<td><input name="userName" class="textfield" value="<?php echo escape($userName); ?>"/>
+			<td><input name="userName" class="textfield" value="<?php echo $userName; ?>"/>
 			</td>
 		</tr>
 		<tr>

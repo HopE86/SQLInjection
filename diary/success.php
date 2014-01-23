@@ -10,8 +10,8 @@ isset($_REQUEST['userName']) ? $userName = $_GET['userName'] : null;
 require('header.php');?>
 <h2>Success</h2>
 <?php if (isset($userName)) :?>
-	<h3>Welcome, <?php echo escape($userName);?>!</h3>
-	<p><a href="login.php?userName=<?php echo escape($userName);?>">Login</a></p>
+	<h3>Welcome, <?php echo $userName;?>!</h3>
+	<p><a href="login.php?userName=<?php echo $userName;?>">Login</a></p>
 <?php elseif(isset($entry)) :?>
 	<h3>Entry successfully added!</h3>
 	<p><a href="list.php">Entries</a></p>
