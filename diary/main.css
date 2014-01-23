@@ -1,35 +1,60 @@
 @CHARSET "ISO-8859-1";
 
-body {
-	font-size: 14px;
-	margin: 40px;
-	margin-top: 20px;
-	font-family: Convergence;
-	background-color: #D8D8D8;
+html, body
+{
+	height: 100%;
 }
 
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background: #eee;
+	font-family: 'Calibri', sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+	color: #333;
+}
+
+ol, ul
+{
+	padding: 0;
+	list-style: none;
+}
+
+#container {
+	min-height:100%;
+	position:relative;
+}
+	
 .header {
-	margin-bottom: 20px;
-	background-color: #C0C0C0;
-	color: black;
-	border: 2px solid black;
-	padding: 0px 10px 10px 10px;
+	overflow: hidden;
+	padding: 4em 0em;
+	background: #8DCB89;
+	background-size: cover;
+	border-bottom: 1px solid gray;
+	color: #003300;
 }
 
 .content {
 	margin-left: 20px;
+	margin-right: 20px;
+	padding-bottom: 35px;
 }
 
 .footer {
-	margin-top: 20px;
-	padding: 0px 10px 0px 10px;
-	background-color: #C0C0C0;
+	text-align: right;
+	position:absolute;
+	bottom: 0;
+	height:30px;
+	width: 100%;
 }
+
 .login {
 	float: right;
 }
 .navigation {
-	font-family: Squada One;
+	font-family: 'Calibri', sans-serif;
 	margin-left: 10px;
 	font-size: 24px;
 	float: left;
@@ -39,11 +64,18 @@ body {
 }
 a {
 	text-decoration: none;
-	color: #600000;
+	color: #003300;
+	font-style: italic;
 }
 
 a:HOVER {
-	font-weight: bold;
+	font-weight: bolder;
+}
+
+.header a {
+	text-decoration: none;
+	color: white;
+	font-style: italic;
 }
 
 .header h1 {
@@ -61,16 +93,29 @@ a:HOVER {
 .header p {
 	margin: 0;
 	padding: 0;
+	margin-right: 10px;
+}
+
+.headerLinks {
+	padding: 7px 0;
+	background: #333;
+	color: white;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
 }
 
 .footer {
-	border: 1px solid gray;
+	border-top: 1px solid gray;
+	background: #333;
+	color: white;
+	padding-top: 5px;
 }
 
 .footer p {
 	margin: 0;
 	padding: 0;
 	font-size: 10pt;
+	padding-right: 10px;
 }
 
 table {
@@ -79,21 +124,25 @@ table {
 
 th {
 	text-align: left;
-	padding: 2px 5px;
 }
 
 td {
-	max-width: 200px;
 	padding: 2px 5px;
 }
+
+td, th
+{
+	vertical-align:top;
+}
+
 .productlist td, .ratinglist td {
 	border: 1px solid gray;
 	overflow: hidden;
 }
 h2 {
-	margin-top: 5px;
+	margin-top: 10px;
 	margin-bottom: 5px;
-	font-size: 20px;
+	font-size: 30px;
 }
 h3 {
 	margin-top: 5px;
@@ -109,8 +158,61 @@ span.category {
 	color: red;
 	font-weight: bold;
 	border: 1px solid red;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .errorTable {
 	color: red;
 }
 
+.textfield {
+	width: 400px;
+}
+
+/*********************************************************************************/
+/* Button Style                                                                  */
+/*********************************************************************************/
+
+	.button
+	{
+		display: inline-block;
+		margin-top: 2em;
+		padding: 1em 2em 1em 2em;
+		background: #ff6816;
+		border-radius: 8px;
+		letter-spacing: 0.20em;
+		line-height: 1.8em;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 1.2em;
+		color: #FFF;
+	}
+	
+	.button:before
+	{
+		display: inline-block;
+		background: #8DCB89;
+		margin-right: 1em;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 20px;
+		text-align: center;
+		color: #272925;
+	}
+	
+	.button-small
+	{
+		padding: 0.3em 1.8em;
+		background: #8DCB89;
+		border-radius: 5px;
+		line-height: 1.8em;
+		font-size: 1em;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.button-small:pressed {
+		margin-top: 1px;
+	}

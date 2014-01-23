@@ -37,12 +37,29 @@ class DataManager {
 		$con->close();
 		return $user;
 	} //getUserForName
+    /*public static function getUserForName($userName) { //unsafe
+        $user = null;
+        $con = self::getConnection();
+        $query  = "SELECT id, login, password FROM user WHERE login = '$userName';";
+        $query .= "INSERT INTO loginLog(date, user_id) VALUES (Sysdate() , (SELECT id FROM user WHERE login = '$userName'));";
+        if ($con -> multi_query($query)) {
+            if ($result = $con -> store_result()) {
+                $row = $result -> fetch_row();
+                if (!is_null($row)) {
+                    $user = new User($row[0], $row[1], $row[2]);
+                    $result -> free();
+                } //if
+            } //if
+        } //if
+        $con->close();
+        return $user;
+    } //getUserForName*/
 	public static function insertUser($userName, $password) {
 		$userId = -1;
 		$con = self::getConnection();
 		$userName = $con -> escape_string($userName);
 		$password = $con -> escape_string($password);
-		//$password = hash('sha1', "$userName|$password");
+		$password = hash('sha1', "$userName|$password");
 		self::query($con, "BEGIN;");
 		if (self::query($con, "INSERT INTO user(login, password) VALUES('$userName', '$password');"))
 			$userId = mysqli_insert_id($con);
@@ -67,6 +84,7 @@ class DataManager {
 		$entries = array();
 		$con = self::getConnection();
 		$term = $con -> escape_string($term);
+        $id = $con -> escape_string($id);
 		$res = self::query($con, "SELECT id, text, user_id, date
 				FROM entry WHERE user_id = $id  AND
 				 (text LIKE '%$term%' OR date LIKE '%$term%') ORDER BY date DESC;");
@@ -100,6 +118,5 @@ class DataManager {
 		$con->close();
 		return $entryId;
 	} //insertEntry
-
 } //DataManager
 

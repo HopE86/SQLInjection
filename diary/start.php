@@ -4,8 +4,8 @@
 ?>
 
 <?php require('header.php'); ?>	
-	<h3>Willkommen!</h3>
-	<p>Schreibe deine Gedanken in unserem SuperDuper sicheren Online-Tagebuch nieder!
+	<h2>Willkommen!</h2>
+	<p>Schreibe deine Gedanken in unserem SuperDuper sicheren Online-Tagebuch nieder!<br />
 	<?php if($user == null) :?>
 	Logge dich dazu ein (<a href="login.php">Login</a>).
 	<?php endif;?>

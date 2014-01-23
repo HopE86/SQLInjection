@@ -21,7 +21,7 @@ else
 	<table>
 		<tr>
 			<th>User name:</th>
-			<td><input name="userName" value="<?php echo escape($userName); ?>"/>
+			<td><input name="userName" value="<?php echo escape($userName); ?>" class="textfield"/>
 			</td>
 			<?php
 			if (isset($registerErrors['userName']))
@@ -30,7 +30,7 @@ else
 		</tr>
 		<tr>
 			<th>Password:</th>		
-			<td><input type="password" name="password1" /></td>
+			<td><input type="password" name="password1" class="textfield" /></td>
 			<?php
 			if (isset($registerErrors['userPassword']))
 				 echo "<td class='errorTable'>".escape($registerErrors['userPassword'])."</td>";
@@ -38,10 +38,10 @@ else
 		</tr>
 		<tr>
 			<th>Confirm password:</th>
-			<td><input type="password" name="password2" /></td>
+			<td><input type="password" name="password2" class="textfield" /></td>
 		</tr>
 	</table>
-	<input type=submit value="Register" />
+	<input type=submit value="Register" class="button-small" />
 </form>
 <?php require('error.php'); ?>
 <?php require('footer.php'); ?>

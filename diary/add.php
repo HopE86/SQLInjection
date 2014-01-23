@@ -17,15 +17,14 @@ else
 <form method="post" action="">
 	<table>
 		<tr>
-			<th>Description:</th>		
-			<td><textarea name="text" cols="30" rows="15" maxlength="400"></textarea></td>
-		</tr>
+			<td><textarea name="text" cols="30" rows="15" maxlength="400" class="textfield"></textarea></td>
 		<?php
 			if (isset($addErrors['text']))
 				 echo "<tr><th></th><td class='errorTable'>".escape($addErrors['text'])."</td></tr>";
 		?>
+		</tr>
 	</table>
-	<input type=submit value="Add Entry" />
+	<input type=submit value="Add Entry" class="button-small" />
 </form>
 <?php require('error.php'); ?>
 <?php require('footer.php'); ?>

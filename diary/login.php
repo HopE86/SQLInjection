@@ -15,15 +15,15 @@ if (isset($_REQUEST['userName']) && isset($_REQUEST['password']))
 	<table>
 		<tr>
 			<th>User name:</th>
-			<td><input name="userName" value="<?php echo escape($userName); ?>"/>
+			<td><input name="userName" class="textfield" value="<?php echo escape($userName); ?>"/>
 			</td>
 		</tr>
 		<tr>
 			<th>Password:</th>
-			<td><input type="password" name="password" /></td>
+			<td><input type="password" name="password" class="textfield" /></td>
 		</tr>
 	</table>
-	<input type=submit value="Login" />
+	<input type=submit value="Login" class="button-small" />
 </form>
 <?php require('error.php'); ?>
 <?php require('footer.php'); ?>

@@ -18,15 +18,15 @@ $count = count($entries);
 ?>
 
 <?php require('header.php'); ?>
-<h3>Entries</h3>
+<h2>Entries</h2>
 <form>
 	<table>
 	<tr>
 		<th>Term or date: </th>
-		<td> <input name="term" value="<?php echo escape($term); ?>" /> </td>
+		<td> <input name="term" value="<?php echo escape($term); ?>" class="textfield" /> </td>
 	</tr>
 	</table>
-	<input type="submit" value="Search" />
+	<input type="submit" value="Search" class="button-small" />
 </form>
 <?php if(sizeof($entries) > 0) {
 require('entrylist.php');
