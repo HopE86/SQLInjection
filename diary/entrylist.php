@@ -1,11 +1,6 @@
 <?php
 include_once('code/util.php');
 if (!isset($entries)) die('error: no entries defined');
-/*foreach($entries as $entry) {
-	$item = new EntryListItem($entry);
-	$item -> updateData();
-	$items[] = $item;
-}*/
 ?>
 
 <table class="productlist">
