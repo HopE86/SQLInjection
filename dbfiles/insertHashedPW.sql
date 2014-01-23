@@ -1,9 +1,9 @@
 USE diary;
-INSERT INTO `user` (`login`,`password`) VALUES ("test","geheim");
-INSERT INTO `user` (`login`,`password`) VALUES ("erwin","geheim");
-INSERT INTO `user` (`login`,`password`) VALUES ("johann.farm","geheim");
-INSERT INTO `user` (`login`,`password`) VALUES ("karin","geheim");
-INSERT INTO `user` (`login`,`password`) VALUES ("another.user","geheim");
+INSERT INTO `user` (`login`,`password`) VALUES ("test","5e2c1f7ff13cdf65e90aea6c39c7b40240af607c"); #geheim
+INSERT INTO `user` (`login`,`password`) VALUES ("erwin","e971ad1aec822a7ef17b85155d7162028219589d");
+INSERT INTO `user` (`login`,`password`) VALUES ("johann.farm","15a7a95180682fa13cdb90553f15274f7638b6ac");
+INSERT INTO `user` (`login`,`password`) VALUES ("karin","c43e9db9fa05162a4115b6b4bdb631d208dddc0d");
+INSERT INTO `user` (`login`,`password`) VALUES ("another.user","4038f17fc1f1f26ee49dfc5c8efeb111f8bda3a6");
 INSERT INTO `entry` (`text`,`user_id`,`date`) VALUES ("Liebes Tagebuch, ich bin frisch verliebt! Letztens habe ich sie am FKF gesehen und es hat gefunkt.",3,"2014-01-17 09:41:31");
 INSERT INTO `entry` (`text`,`user_id`,`date`) VALUES ("Liebes Tagebuch, heute habe ich sie in der Campina gesehen. Ich habe mich aber nicht getraut, sie anzusprechen. :(",3,"2014-01-20 22:27:20");
 INSERT INTO `entry` (`text`,`user_id`,`date`) VALUES ("Liebes Tagebuch, ich kann nicht schlafen weil ich so arg verliebt bin.",3,"2014-01-21 04:30:56");
