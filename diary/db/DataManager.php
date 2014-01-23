@@ -34,6 +34,11 @@ class DataManager {
 		if($u = $res->fetch_object())
 			$user =new User($u -> id, $u -> login, $u -> password);
 		$res->close();
+        if (!is_null($user)) {
+            $id = escape($user -> getId());
+            self::query($con,
+                "INSERT INTO loginLog(date, user_id) VALUES (Sysdate() , $id);");
+        } //if
 		$con->close();
 		return $user;
 	} //getUserForName
