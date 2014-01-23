@@ -64,7 +64,7 @@ class DataManager {
 		$con = self::getConnection();
 		//$userName = $con -> escape_string($userName);
 		//$password = $con -> escape_string($password);
-		$password = hash('sha1', "$userName|$password");
+		//$password = hash('sha1', "$userName|$password");
 		self::query($con, "BEGIN;");
 		if (self::query($con, "INSERT INTO user(login, password) VALUES('$userName', '$password');"))
 			$userId = mysqli_insert_id($con);
