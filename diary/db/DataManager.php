@@ -16,7 +16,7 @@ class DataManager {
 	public static function getUser($id) {
 		$user = null;
 		$con = self::getConnection();
-		$id = $con -> escape_string($id);
+		//$id = $con -> escape_string($id);
 		$res = self::query($con,
 				 "SELECT id, login, password FROM user WHERE id = $id;");
 		if($u = $res -> fetch_object())
