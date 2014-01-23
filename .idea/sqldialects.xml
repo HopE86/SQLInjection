@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/dbfiles/create.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/dbfiles/insert.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/dbfiles/insertHashedPW.sql" dialect="MySQL" />
   </component>
 </project>
 

